@@ -7,8 +7,6 @@ body {
     justify-content: center;
     align-items: center;
 
-    color: lightcyan;
-
     font-family: sans-serif;
     text-align: center;
 
@@ -16,9 +14,13 @@ body {
 
     height: 100vh;
     margin: 0;
+}
 
+.gradient-bg {
     background: rgb(67,28,82);
     background: linear-gradient(45deg, rgba(67,28,82,1) 0%, rgba(9,9,121,1) 0%, rgba(168,69,53,1) 100%);
+
+    color: lightcyan;
 }
 
 .text-container {
@@ -33,5 +35,9 @@ body {
     body {
         flex-flow: column;
         text-align: center;
+    }
+
+    .text-container {
+        align-items: center;
     }
 }
