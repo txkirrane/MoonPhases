@@ -37,7 +37,7 @@
             getMoonData
                 .then(({ currentPhase }) => {
                     label.innerHTML = "Current Lunar Phase:"
-                    phaseText.innerHTML = `${currentPhase.phaseName}`
+                    phaseText.innerHTML = `${currentPhase.phaseName} ${!currentPhase.isPhaseLimit ? currentPhase.lighting > 50 ? "Gibbous" : "Crescent" : null}`
                     image.innerHTML = currentPhase.svg
                 })
 
