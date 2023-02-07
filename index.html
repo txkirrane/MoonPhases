@@ -7,7 +7,7 @@
     <title>MoonPhases</title>
     <link rel="stylesheet" href="main.css">
 </head>
-<body class="gradient-bg">
+<body>
     <script>
 
         // Function used to retrieve moon data
@@ -28,10 +28,17 @@
         // On doc load
         document.body.onload = () => {
 
+            // Get URL params
+            const urlParams = new URLSearchParams(window.location.search)
+
             // Get elements from DOM
             const image = document.getElementById('phase-image')
             const phaseText = document.getElementById('phase-text')
             const label = document.getElementById('phase-text-label')
+            const body = document.body
+
+            // If nobg is present, set no bg
+            body.classList.add(urlParams.has('nobg') ? null : "gradient-bg")
 
             // Get moon data, display it
             getMoonData
