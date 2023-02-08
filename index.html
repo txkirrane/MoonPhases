@@ -38,7 +38,11 @@
             const body = document.body
 
             // If nobg is present, set no bg
-            body.classList.add(urlParams.has('nobg') ? null : "gradient-bg")
+            body.classList.add(urlParams.has('nobg') || urlParams.has('bgcolor') ? null : "gradient-bg")
+
+            // Check if bg color is present, if so, set it
+            urlParams.has('bgcolor') ? body.style.backgroundColor = urlParams.get('bgcolor') : null
+            urlParams.has('textcolor') ? body.style.color = urlParams.get('textcolor') : null
 
             // Get moon data, display it
             getMoonData
